@@ -1,6 +1,6 @@
 import { EnvironmentService } from '../../environment/environment.service';
-import { MailOption, PostmarkConfig, SMTPConfig } from '../interfaces';
-import { SmtpDriver, PostmarkDriver, LogDriver } from '../drivers';
+import { MailOption, PostmarkConfig, SendGridConfig, SMTPConfig } from '../interfaces';
+import { SmtpDriver, PostmarkDriver, SendGridDriver, LogDriver } from '../drivers';
 import { MailDriver } from '../drivers/interfaces/mail-driver.interface';
 import { MailConfig } from '../interfaces';
 import { MAIL_CONFIG_TOKEN, MAIL_DRIVER_TOKEN } from '../mail.constants';
@@ -12,6 +12,8 @@ function createMailDriver(mail: MailConfig): MailDriver {
       return new SmtpDriver(mail.config as SMTPConfig);
     case MailOption.Postmark:
       return new PostmarkDriver(mail.config as PostmarkConfig);
+      case MailOption.SendGrid:
+        return new SendGridDriver(mail.config as SendGridConfig);
     case MailOption.Log:
       return new LogDriver();
     default:

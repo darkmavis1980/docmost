@@ -1,8 +1,8 @@
+import { ServerClient } from 'postmark';
+import { Logger } from '@nestjs/common';
 import { MailDriver } from './interfaces/mail-driver.interface';
 import { PostmarkConfig } from '../interfaces';
-import { ServerClient } from 'postmark';
 import { MailMessage } from '../interfaces/mail.message';
-import { Logger } from '@nestjs/common';
 import { mailLogName } from '../mail.utils';
 
 export class PostmarkDriver implements MailDriver {

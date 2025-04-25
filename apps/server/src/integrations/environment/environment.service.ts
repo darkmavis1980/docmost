@@ -141,6 +141,10 @@ export class EnvironmentService {
     return this.configService.get<string>('POSTMARK_TOKEN');
   }
 
+  getSendGridApiKey(): string {
+    return this.configService.get<string>('SENDGRID_API_KEY');
+  }
+
   getDrawioUrl(): string {
     return this.configService.get<string>('DRAWIO_URL');
   }

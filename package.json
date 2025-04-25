@@ -25,6 +25,8 @@
     "@hocuspocus/transformer": "^2.15.2",
     "@joplin/turndown": "^4.0.74",
     "@joplin/turndown-plugin-gfm": "^1.0.56",
+    "@sendgrid/client": "^8.1.5",
+    "@sendgrid/mail": "^8.1.5",
     "@sindresorhus/slugify": "1.1.0",
     "@tiptap/core": "^2.10.3",
     "@tiptap/extension-code-block": "^2.10.3",
@@ -69,6 +71,7 @@
     "jszip": "^3.10.1",
     "linkifyjs": "^4.2.0",
     "marked": "^13.0.3",
+    "server": "^1.0.41",
     "uuid": "^11.1.0",
     "y-indexeddb": "^9.0.12",
     "yjs": "^13.6.20"
