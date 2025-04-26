@@ -12,8 +12,8 @@ function createMailDriver(mail: MailConfig): MailDriver {
       return new SmtpDriver(mail.config as SMTPConfig);
     case MailOption.Postmark:
       return new PostmarkDriver(mail.config as PostmarkConfig);
-      case MailOption.SendGrid:
-        return new SendGridDriver(mail.config as SendGridConfig);
+    case MailOption.SendGrid:
+      return new SendGridDriver(mail.config as SendGridConfig);
     case MailOption.Log:
       return new LogDriver();
     default:
@@ -57,6 +57,14 @@ export const mailDriverConfigProvider = {
           config: {
             postmarkToken: environmentService.getPostmarkToken(),
           } as PostmarkConfig,
+        };
+
+      case MailOption.SendGrid:
+        return {
+          driver,
+          config: {
+            sendgridApiKey: environmentService.getSendGridApiKey(),
+          } as SendGridConfig,
         };
 
       case MailOption.Log:
